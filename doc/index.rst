@@ -134,14 +134,14 @@ We should include:
 Using PID control joints
 -----------------------------------------------------------
 
-To use PID control joints in gazebo_ros2_control, you should define their parameters inside the `<joint>` tag 
-within the `<ros2_control>` tag. These PID joints can be controlled either in position or velocity.
+To use PID control joints in gazebo_ros2_control, you should define their parameters inside the ``<joint>`` tag 
+within the ``<ros2_control>`` tag. These PID joints can be controlled either in position or velocity.
 
-- To control a joint with velocity PID, simply set its `command_interface` to `"velocity_PID"`.
-- To control a joint with position PID, set its `command_interface` to `"position_PID"`.
+- To control a joint with velocity PID, simply set its ``command_interface`` to ``velocity_PID``.
+- To control a joint with position PID, set its ``command_interface`` to ``position_PID``.
 
 .. note::
-    You cannot have both command interfaces set to position and `position_PID` for the same joint. The same restriction applies to velocity (and `velocity_PID`).
+    You cannot have both command interfaces set to position and position_PID for the same joint. The same restriction applies to velocity (and velocity_PID).
 
 To create a system with one joint that can be controlled using both position_PID and velocity_PID, follow this example:
 
@@ -176,12 +176,12 @@ To create a system with one joint that can be controlled using both position_PID
 
 Where the parameters are as follows:
 
-- `pos_kp`: Proportional gain
-- `pos_ki`: Integral gain
-- `pos_kd`: Derivative gain
-- `pos_max_integral_error`: Maximum summation of the error
+- ``pos_kp``: Proportional gain
+- ``pos_ki``: Integral gain
+- ``pos_kd``: Derivative gain
+- ``pos_max_integral_error``: Maximum summation of the error
 
-The same definitions apply to the `vel_*` parameters.
+The same definitions apply to the ``vel_*`` parameters.
 
 Add the gazebo_ros2_control plugin
 ==========================================
