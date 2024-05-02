@@ -134,7 +134,7 @@ We should include:
 Using PID control joints
 -----------------------------------------------------------
 
-To use PID control joints in gazebo_ros2_control, you should define their parameters inside the ``<joint>`` tag 
+To use PID control joints in gazebo_ros2_control, you should define their parameters inside the ``<joint>`` tag
 within the ``<ros2_control>`` tag. These PID joints can be controlled either in position or velocity.
 
 - To control a joint with velocity PID, simply set its ``command_interface`` to ``velocity_PID``.
@@ -182,6 +182,31 @@ Where the parameters are as follows:
 - ``pos_max_integral_error``: Maximum summation of the error
 
 The same definitions apply to the ``vel_*`` parameters.
+
+To try the position PID example, run the following command:
+
+.. code-block:: shell
+
+  ros2 launch gazebo_ros2_control_demos vertical_cart_example_position_pid.launch.py
+
+When the Gazebo world is launched you can run the following commands to move the cart :
+
+.. code-block:: shell
+
+  ros2 run gazebo_ros2_control_demos example_position_pid
+
+
+Similarly, for the velocity PID example, execute the following command:
+
+.. code-block:: shell
+
+  ros2 launch gazebo_ros2_control_demos vertical_cart_example_velocity_pid.launch.py
+
+When the Gazebo world is launched you can run the following commands to move the cart :
+
+.. code-block:: shell
+
+  ros2 run gazebo_ros2_control_demos example_velocity
 
 Add the gazebo_ros2_control plugin
 ==========================================
@@ -286,6 +311,8 @@ You can run some of the configuration running the following commands:
   ros2 launch gazebo_ros2_control_demos cart_example_effort.launch.py
   ros2 launch gazebo_ros2_control_demos diff_drive.launch.py
   ros2 launch gazebo_ros2_control_demos tricycle_drive.launch.py
+  ros2 launch gazebo_ros2_control_demos vertical_cart_example_position_pid.launch.py
+  ros2 launch gazebo_ros2_control_demos vertical_cart_example_velocity_pid.launch.py
 
 
 When the Gazebo world is launched you can run some of the following commands to move the cart.
@@ -293,6 +320,7 @@ When the Gazebo world is launched you can run some of the following commands to 
 .. code-block:: shell
 
   ros2 run gazebo_ros2_control_demos example_position
+  ros2 run gazebo_ros2_control_demos example_position_pid
   ros2 run gazebo_ros2_control_demos example_velocity
   ros2 run gazebo_ros2_control_demos example_effort
   ros2 run gazebo_ros2_control_demos example_diff_drive
